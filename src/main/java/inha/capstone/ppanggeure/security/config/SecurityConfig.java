@@ -37,7 +37,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable(); //CSRF off
         http
                 .authorizeRequests()
-                .antMatchers("/", "/users", "user/login/**", "/login*", "/editor/**", "/home").permitAll()
+                .antMatchers("/", "/users", "user/login/**", "/login*", "/menuImgUpload", "/display", "/editor/**", "/home").permitAll()
                 .antMatchers("/mypage").hasRole("USER") //hasRole : ROLE_권한명(prefix 로 ROLE_이 붙음)
                 .antMatchers("/messages").hasRole("MANAGER")
                 .antMatchers("/config").hasRole("ADMIN")
